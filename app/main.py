@@ -8,16 +8,29 @@ from slack_sdk.oauth.state_store import FileOAuthStateStore
 
 from app.db import upsert_today_standup_status, get_today_standup_status, generate_report
 
+# oauth_settings = OAuthSettings(
+#     client_id=os.environ["SLACK_CLIENT_ID"],
+#     client_secret=os.environ["SLACK_CLIENT_SECRET"],
+#     scopes=["channels:history", "chat:write", "commands", "im:history", "im:read", "files:write"],
+#     installation_store=FileInstallationStore(base_dir="./data"),
+#     state_store=FileOAuthStateStore(expiration_seconds=600, base_dir="./data")
+# )
+
 oauth_settings = OAuthSettings(
-    client_id=os.environ["SLACK_CLIENT_ID"],
-    client_secret=os.environ["SLACK_CLIENT_SECRET"],
+    client_id=os.environ["3856986079826.3856996680482"],
+    client_secret=os.environ["b594cc917a764140e0948090de7f2134"],
     scopes=["channels:history", "chat:write", "commands", "im:history", "im:read", "files:write"],
     installation_store=FileInstallationStore(base_dir="./data"),
     state_store=FileOAuthStateStore(expiration_seconds=600, base_dir="./data")
 )
 
+# app = App(
+#     signing_secret=os.environ["SIGNING_SECRET"],
+#     oauth_settings=oauth_settings
+# )
+
 app = App(
-    signing_secret=os.environ["SIGNING_SECRET"],
+    signing_secret=os.environ["c847cf346c50e90d56449aa2ebfbd6f1"],
     oauth_settings=oauth_settings
 )
 
