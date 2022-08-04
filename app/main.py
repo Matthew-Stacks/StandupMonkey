@@ -31,13 +31,12 @@ def check_standup_status_submission_completed(today_standup_status):
     :param today_standup_status: Today's standup status
     :return: True if standup is complete otherwise False
     """
-    if today_standup_status[2] \
-            and today_standup_status[3] \
-            and today_standup_status[4] \
-            and today_standup_status[5]:
-        return True
-
-    return False
+    return bool(
+        today_standup_status[2]
+        and today_standup_status[3]
+        and today_standup_status[4]
+        and today_standup_status[5]
+    )
 
 
 def post_standup_completion_message(user_id, say):
